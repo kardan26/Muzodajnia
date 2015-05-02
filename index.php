@@ -52,7 +52,7 @@ else
                 ?>
             </ul>
         </div>
-        <div id="body" name="body">
+        <div id="body" >
             <?php
                 include('pages/'.$page.'.php');
             ?>
