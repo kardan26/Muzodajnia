@@ -1,0 +1,244 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+nav{
+    /*background-color: #fff;*/
+    background-color: royalblue;
+    border: 1px solid #dedede;
+    /*border-radius: 4px;*/
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    color: #888;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 100%;
+    height: 40px;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    display: inline-block;
+     -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+nav > ul > li > a {
+    color: #ffffff;
+    display: block;
+    line-height: 40px;
+    padding: 0 24px;
+    text-decoration: none;
+}
+nav > ul > li > a > .caret {
+    border-top: 4px solid #aaa;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    -o-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+}
+nav > ul > li:hover {
+
+    background-color: dodgerblue;
+    color: black;
+    }
+nav > ul > li:hover > a {
+    color: rgb( 255, 255, 255 );
+
+}
+nav > ul > li:hover > a > .caret {
+    border-top-color: rgb( 255, 255, 255 );
+}
+nav > ul > li > div {
+    background-color:dodgerblue;
+    border-top: 0;
+    /*border-radius: 0 0 px 4px;*/
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    display: none;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    width: 165px;
+    visibility: hidden;
+    z-index: 100;
+    -webkit-transiton: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -transition: opacity 0.2s;
+}
+nav > ul > li > div ul > li {
+    display: block;
+}
+nav > ul > li > div ul > li > a {
+    color: #ffffff;
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+    visibility: visible;
+}
+nav > ul > li > div ul > li:hover > a {
+    background-color: rgba( 255, 255, 255, 0.1);
+}
+nav > ul > li > div {
+    background-color: dodgerblue;
+    border-top: 0;
+    /*border-radius: 0 0 4px 4px;*/
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    display: none;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    width: 92px;
+    visibility: hidden;
+    z-index: 100;
+    -webkit-transiton: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -transition: opacity 0.2s;
+}
+nav > ul > li > div ul > li {
+    display: block;
+}
+nav > ul > li > div ul > li > a {
+    color: #fff;
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+nav > ul > li > div ul > li:hover > a {
+    background-color: rgba( 1, 255, 1, 0.1);
+    color: #ffffff;
+}
+nav > ul > li:hover > div {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.nav-right{
+    float: right;
+}
+
+#body{
+    float: right;
+    width: 84%;
+}
+
+.form-sign_in_up{
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+    font-family: sans-serif
+}
+.form-sign_in_up > h2{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.form-input  {
+    border-radius: 5px;
+    height: auto;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    border-color: rgba(0,0,0,0.1);
+}
+.form-input:focus{
+    outline: none;
+    border: 2px;
+    /*border-color: blue;*/
+    box-shadow: 0 0 5px royalblue;
+
+}
+ #email
+{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#password
+{
+    margin-top: 1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-sign_in_up > .przycisk{
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px;
+    margin-top: 5px;
+    /*background-color: dodgerblue;*/
+    background-color: royalblue;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+
+}
+#register > #username{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#register > #email {
+    border-radius: 0px 0px 0px 0px;
+}
+#register>#password1{
+    border-radius: 0px 0px 0px 0px;
+}
+#register>#password2{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+#register > .form-input{
+    margin: 1px;
+}
+#register > .error{
+    display: none;
+}
+
+/*left menu*/
+.left-menu{
+    width: 15%;
+    float: left;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    /*border-radius: 4px;*/
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    color: #888;
+    display: inline;
+}
+
+.left-menu li {
+    list-style-type: none;
+    border: 1px;
+}
+.left-menu  a {
+    text-decoration: none;
+    color: black;
+}
+
+/*SongList*/
+.btn-kup{
+    font-size: 9px;
+    color: #ffffff;
+    padding: 5px;
+    margin-top: 10px;
+    height: 30px;
+
+
+    background-color: royalblue;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+}
+
