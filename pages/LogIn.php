@@ -17,6 +17,8 @@ if(isset($_POST['submit']))
             if(mysqli_num_rows($data) == 1)
             {
                 $user = mysqli_fetch_array($data);
+                $_SESSION['userId'] = $user['id'];
+                $_SESSION['userRole'] = $user['role'];
                 $_SESSION['username'] = $user['username'];
                 header("location: /index.php?main");
             }

@@ -85,6 +85,23 @@ function findUserByEmailAndPassword($email,$password)
             echo print_r($data);
         }
     }
+
+}
+
+function findUserSongs($userId)
+{
+    global $dbc;
+
+    $query = "SELECT s.id , s.name , s.album , s.prize , s.author, s.shortUrl, s.longUrl
+                FROM Songs as s
+          INNER JOIN User_Song as sc
+	              ON sc.song_id=s.id
+               WHERE sc.user_id=$userId";
+
+    $data = mysqli_query($dbc, $query);
+
+    return mysqli_fetch_array($data);
+
 }
 
 

@@ -28,7 +28,13 @@ else
                         echo '<li class="nav-right" >
                                   <a href="#">'.$_SESSION['username'].'<span class="caret"></span></a>
                                   <div>
-                                    <ul>
+                                    <ul>';
+                        if(!empty($_SESSION['userRole']) && $_SESSION['userRole']=='admin')
+                        {
+
+                            echo '<li class="nav-right"> <a href="index.php?page=addSongToLibrary ">Dodaj Piosenkę</a></li>';
+                        }
+                        echo'
                                         <li><a href="index.php?page=userPage">Zarządzaj</a></li>
                                         <li><a href="index.php?page=LogOut">Wyloguj</a></li>
                                     </ul>
@@ -36,8 +42,10 @@ else
                     }
                     else
                     {
+
                         echo '<li class="nav-right"><a href="index.php?page=Register">Zarejestruj</a></li>
                               <li class="nav-right"> <a href="index.php?page=LogIn">Zaloguj</a></li>';
+
                     }
                 ?>
             </ul>
