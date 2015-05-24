@@ -26,6 +26,7 @@ else
                     if(isset($_SESSION['username']))
                     {
                         echo '<li class="nav-right" >
+                                     <li><a href="index.php?page=update">moje konto</a></li>
                                   <a href="#">'.$_SESSION['username'].'<span class="caret"></span></a>
                                   <div>
                                     <ul>';
