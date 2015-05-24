@@ -29,6 +29,7 @@ else
                                   <a href="#">'.$_SESSION['username'].'<span class="caret"></span></a>
                                   <div>
                                     <ul>
+                                        <li><a href="index.php?page=userPage">Zarządzaj</a></li>
                                         <li><a href="index.php?page=LogOut">Wyloguj</a></li>
                                     </ul>
                                   </div>';
