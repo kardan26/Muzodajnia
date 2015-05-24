@@ -33,9 +33,11 @@ if(isset($_GET['category']) && $_GET['page']=='SongList')
                         <td>'.$song['album'].'</td>
                         <td>'.$song['prize'].' zł</td>
                         <td><button class="play" id="'.$song["id"].'" onclick="playSong(\''.$song["shortUrl"].'\')" >&#9658;</button><button id="'.$song["id"].'" onclick="stopSong()" >&#9724;</button></td>
-                        <td><form method="post" action="#">
-                                <input type="hidden" value="'.$song['id'].'"/>
-                                <input type="submit" value="Kup" class="btn-kup"/>
+                        <td><form method="post" action="">
+                                <input type="hidden" id="songId" name="songId" value="'.$song['id'].'"/>
+                                <input type="hidden" id="songName" name="songName" value="'.$song['name'].'"/>
+                                <input type="hidden" id="songPrize" name="songPrize" value="'.$song['prize'].'"/>
+                                <input type="submit" value="Dodaj do koszyka" class="btn-kup"/>
                             </form>
                         </td>
 
@@ -66,3 +68,37 @@ if(isset($_GET['category']) && $_GET['page']=='SongList')
 }
 
 </style>
+
+<?php
+
+if(isset($_POST['songId']) && isset($_POST['songName']))
+{
+    addSongToShoppingCart($_POST['songId'],$_POST['songName'],$_POST['songPrize']);
+}
+
+function addSongToShoppingCart($songId,$songName,$songPrize)
+{
+    $koszyk = $_COOKIE['koszyk'];
+    if(empty($koszyk))
+    {
+        $koszyk = array(
+            array(
+                'songId' => $songId,
+                'songName' => $songName,
+                'songPrize' => $songPrize
+            )
+        );
+    }
+    else
+    {
+        $koszyk = json_decode($_COOKIE['koszyk']);
+        array_push($koszyk,array(
+            'songId' => $songId,
+            'songName' => $songName,
+            'songPrize' => $songPrize
+        ));
+    }
+    setcookie("koszyk",json_encode($koszyk));
+    header("Refresh:0");
+}
+?>

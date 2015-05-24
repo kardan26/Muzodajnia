@@ -99,17 +99,54 @@ function findUserSongs($userId)
                WHERE sc.user_id=$userId";
 
     $data = mysqli_query($dbc, $query);
-
-    return mysqli_fetch_array($data);
+    $table = array();
+    while($row = mysqli_fetch_assoc($data))
+    {
+        array_push($table,$row);
+    }
+    return $table;
 
 }
 
+function getUserMoney($userId)
+{
+    global $dbc;
+
+    $query = "SELECT u.srodki
+               FROM users as u
+               WHERE u.id=$userId";
+    $data = mysqli_query($dbc, $query);
+    if(mysqli_num_rows($data)==1)
+    {
+        $a = mysqli_fetch_row($data);
+        return $a[0];
+    }
+    else
+        return "blad getUserMoney Function";
+
+}
+
+function updateUserMoney($userId,$userMoney)
+{
+    global $dbc;
+
+    $query = "UPDATE users
+              SET srodki =$userMoney
+              WHERE users.id=$userId";
+    $data = mysqli_query($dbc,$query);
+
+    return $data;
+}
+
+function addBuyedSongToUserAccount($userId,$songId)
+{
+    global $dbc;
+    $query = "INSERT INTO  User_Song(user_id,song_id) VALUES ($userId,$songId)";
+
+    $data = mysqli_query($dbc,$query);
 
 
-
-
-
-
+}
 
 
 

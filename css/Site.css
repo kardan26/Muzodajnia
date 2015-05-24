@@ -216,6 +216,7 @@ nav > ul > li:hover > div {
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
     color: #888;
     display: inline;
+    height: 330px;
 }
 
 .left-menu li {
@@ -242,3 +243,30 @@ nav > ul > li:hover > div {
     width: 100%;
 }
 
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 12%;
+}
+#zegar{
+    margin-top: 20px;
+    padding-left: 0px;
+}
+#tarcza {
+    position: absolute;
+}
+#godzina {
+    position: absolute;
+    z-index: 2;
+}
+#sekunda {
+    position: absolute;
+    z-index: 3;
+
+}
+#minuta {
+    position: absolute;
+    z-index: 1;
+}

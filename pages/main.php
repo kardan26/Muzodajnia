@@ -1,5 +1,1 @@
-<?php
-?>
-
-
-main 4
+<img src="../images/muzodajnia.png" class="img-responsive"/>

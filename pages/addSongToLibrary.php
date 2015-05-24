@@ -1,23 +1,21 @@
 <?php
 require_once './config.php';
 $dbc = mysqli_connect($db_host, $db_username, $db_password, $db_name);
-    $lokalizacja = './httpd/fullMusic/';
-    if(is_uploaded_file($_FILES['nazwa_pliku']['tmp_name']))
-    {
-        if(!move_uploaded_file($_FILES['nazwa_pliku']['tmp_name'], $lokalizacja))
-        {
-            echo 'problem: Nie udało się skopiować pliku do katalogu.';
-            return false;
-        }
-    }
-
+$lokalizacja = '../fullMusic/';
+$plik_tmp = $_FILES['plik']['tmp_name'];
+$plik_nazwa = $_FILES['plik']['name'];
+$plik_rozmiar = $_FILES['plik']['size'];
+if(is_uploaded_file($plik_tmp)) {
+    move_uploaded_file($plik_tmp, "fullMusic/$plik_nazwa");
+    echo "Plik: <strong>$plik_nazwa</strong> o rozmiarze
+    <strong>$plik_rozmiar bajtów</strong> został przesłany na serwer!";
+}
 if(isset($_POST['submit']))
 {
     $author = $_POST['author'];
     $name =  $_POST['name'];
     $album = $_POST['album'];
     $prize = $_POST['prize'];
-
     if(!empty($author) && !empty($name) && !empty($album) && !empty($prize))
     {
         $query = "INSERT INTO songs( name, album ,prize,author,shortUrl,longUrl) VALUES ('$name','$album','$prize'),'$author','http://kardan.wc.lt/shortMusic/'.$name.'mp3','http://kardan.wc.lt/fullMusic/'.$name.'mp3')";
